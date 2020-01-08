@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: MyHomePage(),
     );
@@ -84,6 +85,73 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           );
         },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child: Container(
+          height: 50,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                iconSize: 30.0,
+                padding: EdgeInsets.only(left: 28.0),
+                icon: Icon(Icons.home),
+                onPressed: () {
+                  // setState(() {
+                  //   // _myPage.jumpToPage(0);
+                  // });
+                },
+              ),
+              IconButton(
+                iconSize: 30.0,
+                padding: EdgeInsets.only(right: 28.0),
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  // setState(() {
+                  //   _myPage.jumpToPage(1);
+                  // });
+                },
+              ),
+              IconButton(
+                iconSize: 30.0,
+                padding: EdgeInsets.only(left: 28.0),
+                icon: Icon(Icons.notifications),
+                onPressed: () {
+                  // setState(() {
+                  //   _myPage.jumpToPage(2);
+                  // });
+                },
+              ),
+              IconButton(
+                iconSize: 30.0,
+                padding: EdgeInsets.only(right: 28.0),
+                icon: Icon(Icons.list),
+                onPressed: () {
+                  // setState(() {
+                  //   _myPage.jumpToPage(3);
+                  // });
+                },
+              )
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: Container(
+        height: 65.0,
+        width: 65.0,
+        child: FittedBox(
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            // elevation: 5.0,
+          ),
+        ),
       ),
     );
   }
